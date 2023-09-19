@@ -5,10 +5,161 @@
     <meta name="viewport" content="width=device-width" />
     <title>Bookstore</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script defer src="script.js"></script>
   </head>
 
   <body>
-    Hello world
-    <script src="script.js"></script>
+    <header class="header">
+      <h1 class="header__brand-name">Bookstore</h1>
+      <div class="header__user-info">
+        <div class="header__user-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <p class="header__username">John Doe</p>
+      </div>
+    </header>
+
+    <main class="app">
+      <section class="action">
+        <input
+          type="text"
+          class="inp action__search"
+          placeholder="Search books"
+        />
+        <button class="btn action__add">Add book</button>
+      </section>
+
+      <section>
+        <table class="books">
+          <thead>
+            <tr class="books__book">
+              <th>Name</th>
+              <th>Author</th>
+              <th>Topic</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="books__content">
+            <!-- <tr class="books__book">
+              <td>Refactoring</td>
+              <td>Martin Fowler</td>
+              <td>Programming</td>
+              <td>
+                <span class="books__delete">Delete</span>
+              </td>
+            </tr>
+            <tr class="books__book">
+              <td>Designing Data-Intensive Applications</td>
+              <td>Martin Kleppmann</td>
+              <td>Database</td>
+              <td>
+                <span class="books__delete">Delete</span>
+              </td>
+            </tr>
+            <tr class="books__book">
+              <td>The Phoenix Project</td>
+              <td>Gene Kim</td>
+              <td>DevOps</td>
+              <td>
+                <span class="books__delete">Delete</span>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <div class="overlay hidden"></div>
+    <div class="modal add-modal hidden">
+      <h3 class="modal__heading">Add book</h3>
+      <div class="modal__close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+      <form class="add-modal__form">
+        <div class="add-modal__field">
+          <label for="name" class="add-modal__label">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="inp add-modal__input"
+            placeholder="Refactoring"
+            required
+          />
+        </div>
+        <div class="add-modal__field">
+          <label for="author" class="add-modal__label">Author</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            class="inp add-modal__input"
+            placeholder="Martin Fowler"
+            required
+          />
+        </div>
+        <div class="add-modal__field">
+          <label for="topic" class="add-modal__label">Topic</label>
+          <!-- <input type="text" id="topic" class="inp add-modal__input" /> -->
+          <select name="topic" id="topic" class="inp add-modal__input">
+            <option class="add-modal__option">Programming</option>
+            <option class="add-modal__option">Database</option>
+            <option class="add-modal__option">DevOps</option>
+          </select>
+        </div>
+        <button class="btn add-modal__btn">Create</button>
+      </form>
+    </div>
+
+    <div class="modal delete-modal hidden">
+      <h3 class="modal__heading">Delete book</h3>
+      <div class="modal__close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+      <p class="delete-modal__message">
+        Do you want to delete
+        <br />
+        <span class="delete-modal__name">Refactoring</span> book?
+      </p>
+      <div class="delete-modal__buttons">
+        <button class="btn-outline delete-modal__delete">Delete</button>
+        <button class="btn delete-modal__cancel">Cancel</button>
+      </div>
+    </div>
   </body>
 </html>

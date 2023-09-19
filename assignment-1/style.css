@@ -1,4 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 html {
+  font-size: 62.5%;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  background-color: #f8f9fa;
+}
+
+.btn {
+  border: none;
+  background: none;
+  background-color: #e03131;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: end;
+}
+
+.btn-outline {
+  /* border: 1px solid #e03131; */
+  border: none;
+  background: none;
+  box-shadow: inset 0 0 0 1px #e03131;
+  color: #e03131;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: end;
+}
+
+.inp {
+  padding: 0.8rem;
+  font-family: inherit;
+  border: 1px solid #868e96;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border-bottom: 1px solid #868e96;
+}
+
+.header__brand-name {
+  font-weight: 800;
+}
+
+.header__user-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header__user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  border-radius: 50%;
+  padding: 0.8rem;
+}
+
+.header__user-icon svg {
+  height: 1.6rem;
+  width: 1.6rem;
+  color: #bbb;
+  stroke: currentColor;
+}
+
+.header__username {
+  font-size: 1.2rem;
+}
+
+.app {
+  padding: 3.2rem 1.6rem;
+}
+
+.action {
+  display: flex;
+  justify-content: end;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid #868e96;
+  padding: 0.8rem 1.2rem;
+}
+
+.books {
+  font-size: 1.6rem;
+  text-align-last: left;
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.books__book {
+  display: grid;
+  grid-template-columns: 1fr 23% 18% 13%;
+}
+
+.books__book th {
+  text-decoration: underline;
+}
+
+.books__delete {
+  color: #e03131;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  background-color: #0006;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  z-index: 100;
+}
+
+.modal {
+  background-color: #fff;
+  width: 32rem;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.modal__heading {
+  font-size: 1.8rem;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1.9rem;
+  right: 1.9rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.modal__close svg {
+  color: #868e96;
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 4px;
+}
+
+.add-modal__form {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.add-modal__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-modal__label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.add-modal__option {
+  padding: 0.8rem;
+}
+
+.add-modal__btn {
+  margin-top: 0.8rem;
+}
+
+.modal__heading {
+  text-align: center;
+}
+
+.delete-modal__message {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  text-align: center;
+  /* padding: 0 20%; */
+  margin: 3.2rem 0;
+}
+
+.delete-modal__name {
+  font-weight: 600;
+}
+
+.delete-modal__buttons {
+  display: flex;
+  /* align-items: center; */
+  gap: 2.4rem;
+  justify-content: center;
 }
